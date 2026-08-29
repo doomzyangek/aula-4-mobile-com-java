@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.LayoutInflaterCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -34,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        RecyclerView rvNota = findViewById(R.id.rvNota);
+        rvNota.setLayoutManager(new LinearLayoutManager(this));
+
+        AdapterNota adapter = new AdapterNota(listaNotas);
+        rvNota.setAdapter(adapter);
 
 
         btadd = findViewById(R.id.btadd);
