@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         Nota item = new Nota(campotitulo.getText().toString(),
                                              campodescricao.getText().toString());
                        listaNotas.add(item);
+                       adapter.notifyDataSetChanged();
                     }).show();
         });
 
